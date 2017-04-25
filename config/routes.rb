@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get '*path', to: 'catches#new'
+  get '*path', to: 'catcher#catch'
 end
