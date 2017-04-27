@@ -7,10 +7,21 @@ module Admin
     end
 
     def show
-      @location = Location.find params[:id]
-      @marker = { lat: @location.latitude, lng: @location.longitude }
+      @marker = { lat: location.latitude, lng: location.longitude }
 
       render 'admin/locations/show'
+    end
+
+    def destroy
+      location.destroy
+
+      redirect_to admin_locations_path
+    end
+
+    private
+
+    def location
+      @location ||= Location.find params[:id]
     end
   end
 end

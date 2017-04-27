@@ -59,5 +59,5 @@
 
 <div class="actions">
   <%= link_to 'Back', admin_locations_path %> /
-  <%= link_to 'Delete', '#' %>
+  <%= link_to 'Delete', admin_location_path(@location), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
