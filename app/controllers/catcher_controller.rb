@@ -1,7 +1,6 @@
 class CatcherController < ApplicationController
   def catch
-    # ip = request.remote_ip
-    ip = "91.245.72.23"
+    ip = request.remote_ip
 
     Geocoder.search(ip).each do |result|
       create_location(result.data)
@@ -26,7 +25,7 @@ class CatcherController < ApplicationController
         'country_name',
         'country_code',
         'time_zone'
-      )
+      ).merge(user_agent: request.user_agent)
     )
   end
 end

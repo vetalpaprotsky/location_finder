@@ -12,6 +12,7 @@ class CreateLocations < ActiveRecord::Migration[5.0]
       t.string  :country_name
       t.string  :country_code
       t.string  :time_zone
+      t.string  :user_agent
 
       t.timestamps
     end

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170418073350) do
     t.string   "country_name"
     t.string   "country_code"
     t.string   "time_zone"
+    t.string   "user_agent"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

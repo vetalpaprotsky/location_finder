@@ -1,0 +1,21 @@
+<table>
+  <th>IP</th>
+  <th>Country</th>
+  <th>Region</th>
+  <th>City</th>
+  <th>Date</th>
+  <th>Actions</th>
+  <% @locations.each do |location| %>
+    <tr>
+      <td><%= location.ip %></td>
+      <td><%= location.country_name %></td>
+      <td><%= location.region_name %></td>
+      <td><%= location.city %></td>
+      <td><%= Time.zone.parse(location.created_at.to_s).localtime %></td>
+      <td>
+        <%= link_to 'Open', admin_location_path(location) %> /
+        <%= link_to 'Delete', '#' %>
+      </td>
+    </tr>
+  <% end %>
+</ul>
