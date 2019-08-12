@@ -7,7 +7,7 @@
     <tr>
       <td><%= location.ip %></td>
       <td><%= location.user_agent %></td>
-      <td><%= Time.zone.parse(location.created_at.to_s).localtime %></td>
+      <td><%= location.created_at.strftime("%F %T") %></td>
       <td>
         <%= link_to 'Delete', admin_location_path(location), method: :delete %>
       </td>
