@@ -1,18 +1,22 @@
-<a href="https://iplocation.com">Find location by IP here!</a>
+<a href="https://iplocation.com" target="_blank">Find location by IP here!</a>
+<br/>
+<br/>
 
-<table>
-  <th>IP</th>
-  <th>User Agent</th>
-  <th>Date</th>
-  <th></th>
-  <% @locations.each do |location| %>
-    <tr>
-      <td><%= location.ip %></td>
-      <td><%= location.user_agent %></td>
-      <td><%= location.created_at.strftime("%F %T") %></td>
-      <td>
-        <%= link_to 'Delete', admin_location_path(location), method: :delete %>
-      </td>
-    </tr>
-  <% end %>
-</ul>
+<% if @locations.any? %>
+  <table>
+    <th>IP</th>
+    <th>User Agent</th>
+    <th>Date</th>
+    <th></th>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.ip %></td>
+        <td><%= location.user_agent %></td>
+        <td><%= location.created_at.strftime("%F %T") %></td>
+        <td><%= link_to 'Delete', admin_location_path(location), method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div>Nothing yet...</div>
+<% end %>
