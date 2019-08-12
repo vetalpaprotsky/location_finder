@@ -12,7 +12,7 @@ class CatcherController < ApplicationController
   private
 
   def create_location(args)
-    Location.create(
+    Location.create!(
       args.slice(
         'ip',
         'city',
